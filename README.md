@@ -173,12 +173,4 @@ checks do not validate gaze accuracy, installer behavior, or media playback.
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for development and manual checks.
 
-## Credits and licensing
-
-The previous README credits
-[Doomscrolling: Skyrim Edition by reinesana](https://github.com/reinesana/doomscrolling-skyrim-edition).
-Preserve upstream copyright and license notices when distributing derived code.
-The old README mentioned MIT, but no top-level license file was supplied; confirm
-the upstream license and add an appropriate `LICENSE` before presenting this as
-licensed open-source software. Videos and artwork may have separate rights;
-only redistribute assets you have permission to share.
+By: Adam-Mohamed-student / DreTec

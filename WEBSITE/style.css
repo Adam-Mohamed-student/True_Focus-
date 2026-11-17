@@ -1,0 +1,300 @@
+/* ==================================
+   TrueFocus - Modern Futuristic UI
+   Clean structure. No inline hacks.
+=================================== */
+
+:root {
+  --bg: #0f172a;
+  --bg-soft: #111c34;
+  --card: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.08);
+  --text: #e2e8f0;
+  --text-dim: #94a3b8;
+  --primary: #38bdf8;
+  --primary-glow: rgba(56,189,248,0.35);
+}
+
+body.light {
+  --bg: #f8fafc;
+  --bg-soft: #ffffff;
+  --card: rgba(0,0,0,0.04);
+  --border: rgba(0,0,0,0.08);
+  --text: #0f172a;
+  --text-dim: #475569;
+  --primary: #0ea5e9;
+  --primary-glow: rgba(14,165,233,0.25);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ================= Particles Background ================= */
+
+#particles {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+#particles canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ================= Header ================= */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 6%;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text-dim);
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* ================= Sections ================= */
+
+section {
+  padding: 6rem 8%;
+}
+
+#hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: radial-gradient(circle at top, var(--primary-glow), transparent 60%);
+}
+
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  color: var(--text-dim);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+/* ================= Grid & Cards ================= */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 2rem;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* ===== Mouse Follow Glow ===== */
+
+.glow-card {
+  overflow: hidden;
+}
+
+.glow-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    var(--primary-glow),
+    transparent 45%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glow-card:hover::before {
+  opacity: 1;
+}
+
+.glow-card:hover {
+  box-shadow: 0 0 30px var(--primary-glow);
+}
+
+/* ================= Buttons ================= */
+
+.btn-primary,
+.btn-outline {
+  padding: 0.7rem 1.4rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 20px var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ================= Forms ================= */
+
+.contact-form {
+  max-width: 500px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-soft);
+  color: var(--text);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* ================= Footer ================= */
+
+footer {
+  margin-top: 4rem;
+  padding: 3rem 8%;
+  text-align: center;
+  background: var(--bg-soft);
+  border-top: 1px solid var(--border);
+}
+
+.footer-brand {
+  font-weight: 800;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-contact {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+  color: var(--text-dim);
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-dim);
+}
+
+.footer-socials span {
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.footer-socials span:hover {
+  color: var(--primary);
+}
+
+footer p {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 768px) {
+  section {
+    padding: 5rem 6%;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+  }
+}

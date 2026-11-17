@@ -1,0 +1,5 @@
+# MediaPipe also requires the contrib distribution: install just one cv2 provider.
+numpy==1.26.4
+opencv-contrib-python==4.9.0.80
+mediapipe==0.10.14
+pushbullet.py==0.12.0

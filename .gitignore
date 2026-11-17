@@ -1,0 +1,49 @@
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+.venv/
+venv/
+env/
+.conda/
+
+.vscode/
+.DS_Store
+*.log
+*.tmp
+.ipynb_checkpoints/
+
+# Local credentials and configuration (the example contains no credentials)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+secrets*.json
+pullbullet.txt
+
+# Historical local copies; publish the maintained entry point instead
+backup.py
+backup.txt
+860backup.txt
+test_all_directions.py
+
+# Generated packages may retain old credentials. Rebuild before releasing.
+build/
+dist/
+installer_output/
+*.exe
+*.zip
+*.7z
+*.tar
+*.tar.gz
+
+# Generated analysis and test output
+graphify-out/
+.pytest_cache/
+.coverage
+htmlcov/
